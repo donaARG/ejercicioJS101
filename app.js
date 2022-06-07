@@ -38,7 +38,7 @@ const concesionaria = {
         })
         return listado;
     },
-    totalDeVentas: function(){
+    totalDeVentas: function(){//ver esto
         let totalVentas = this.listaDeVentas();
         if(totalVentas.length>0){
             return totalVentas.reduce(function(acc,precio){
