@@ -1,5 +1,12 @@
 let autos = require('./autos');
 
+const personA= {
+    nombre: "Juan",
+    capacidadDePagoEnCuotas: 20000,
+    capacidadDePagoTotal: 100000
+    }
+
+
 const concesionaria = {
     autos: autos,
     buscarAuto : function (patente){
