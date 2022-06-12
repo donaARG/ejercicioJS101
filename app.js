@@ -1,23 +1,19 @@
 let autos = require('./autos');
 
-const personA= {
-    nombre: "Juan",
-    capacidadDePagoEnCuotas: 20000,
-    capacidadDePagoTotal: 100000
-    }
+
 
 
 const concesionaria = {
     autos: autos,
-    buscarAuto : function (patente){
-        for(let i = 0; i < autos.length; i++){
-            if(autos[i].patente == patente){
-                return autos[i]
+    buscarAuto : function (patente){                //un for normal tambien se podria haber usado, que recorra autos.length 
+        let autos = this.autos;
+        let autoBuscado = null;
+        autos.forEach(function(auto) {
+            if(patente ===auto.patente) {
+                autoBuscado = auto
             }
-            else{
-                return null;
-            }
-        }
+        })
+        return autoBuscado;
     },
     venderAuto: function (patente){
         let autoVender = this.buscarAuto(patente)
@@ -81,8 +77,16 @@ const concesionaria = {
        
         
         
-    
+
         
         
     
 };   
+/*
+console.log(concesionaria.buscarAuto("APL123"));
+console.log(concesionaria.venderAuto("APL123"));
+console.log(concesionaria.autosNuevos());
+console.log(concesionaria.listaDeVentas());
+console.log(concesionaria.totalDeVentas());*/
+
+module.exports= concesionaria;
